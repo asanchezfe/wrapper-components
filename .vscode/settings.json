@@ -1,5 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
@@ -7,6 +7,9 @@
     "editor.defaultFormatter": "HookyQR.beautify"
   },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[js]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

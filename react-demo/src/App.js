@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FormGroup from './FormGroup/FormGroup';
+import withButton from './hoc/hoc';
+import CustomInput from './Input';
+import { Content, Left, MultipleSlots } from './slots/MultipleSlots';
+
+function valueChanged(v) {
+  console.log(v)
+}
+
 
 function App() {
+  const Enhanced = withButton(CustomInput, 'Type something:' )
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {/* Simple wrap with slot */}
+        <FormGroup title={"Title..."}>Content form...</FormGroup>
+        
+        <hr/>
+
+        <MultipleSlots
+          left={<Left/>}
+          top={<b>top text</b>}
+          center={<Content/>}
+        />
+
+        <hr/>
+
+        <CustomInput type="number" onChange={valueChanged} />
+
+
+        <hr/>
+        <Enhanced/>
+        
     </div>
   );
 }
