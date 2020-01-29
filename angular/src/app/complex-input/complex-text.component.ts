@@ -20,8 +20,6 @@ export class ComplexInputComponent implements ControlValueAccessor {
 
   value: string;
 
-  classList = '';
-
   private onTouchedCallback: () => void = () => {};
   private onChangeCallback: (_: any) => void = () => {};
 
