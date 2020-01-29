@@ -1,4 +1,4 @@
-import { Component, DoCheck, ElementRef, forwardRef, Host, Input, Optional, SkipSelf } from '@angular/core';
+import { Component, forwardRef, Host, Input, Optional, SkipSelf } from '@angular/core';
 import { AbstractControl, ControlContainer, ControlValueAccessor, FormGroupDirective, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ import { AbstractControl, ControlContainer, ControlValueAccessor, FormGroupDirec
     }
   ]
 })
-export class ComplexInputComponent implements ControlValueAccessor, DoCheck {
+export class ComplexInputComponent implements ControlValueAccessor {
   @Input() formControlName: string; // this does the trick
 
   @Input() label: string;
@@ -25,7 +25,7 @@ export class ComplexInputComponent implements ControlValueAccessor, DoCheck {
   private onTouchedCallback: () => void = () => {};
   private onChangeCallback: (_: any) => void = () => {};
 
-  constructor(@Optional() @Host() @SkipSelf() private controlContainer: ControlContainer, private elRef: ElementRef) {}
+  constructor(@Optional() @Host() @SkipSelf() private controlContainer: ControlContainer) {}
 
   get isRequired() {
     if (this.controlContainer) {
@@ -36,11 +36,6 @@ export class ComplexInputComponent implements ControlValueAccessor, DoCheck {
         return true;
       }
     }
-  }
-
-  ngDoCheck() {
-    /*this.classList = this.elRef.nativeElement.classList;
-    console.log(this.classList);*/
   }
 
   change(event) {
