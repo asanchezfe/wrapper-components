@@ -1,0 +1,15 @@
+.title {
+  background-color: #639fcb;
+  color: #fff;
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.parent {
+  border: 1px solid #639fcb;
+}
+
+.parent div:last-of-type {
+  padding: 1em;
+}

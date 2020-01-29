@@ -1,0 +1,17 @@
+.mvs-input-text {
+  position: relative;
+}
+
+input {
+  width: 100%;
+}
+
+input:placeholder-shown~label {
+  display: none !important;
+}
+
+input~label {
+  display: block;
+  position: absolute;
+  top: -1.5em;
+}

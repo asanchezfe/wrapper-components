@@ -1,0 +1,4 @@
+<div>
+  <label *ngIf="label" [for]="formControlName">{{ label }}</label>
+  <input [type]="type" [id]="formControlName" (change)="change($event)" [value]="value" (keyup)="change($event)" />
+</div>

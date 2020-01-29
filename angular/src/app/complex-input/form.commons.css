@@ -1,0 +1,16 @@
+.required-dot {
+  height: 5px;
+  width: 5px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 0.5em;
+  left: -10px;
+  position: absolute;
+
+}
+
+.error {
+  color: red;
+  font-size: 0.7em;
+}

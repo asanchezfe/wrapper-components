@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+  form = new FormGroup({
+    sampleField: new FormControl(),
+    secondField: new FormControl(23)
+  });
+
+  complexForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.maxLength(6)])
+  });
+
+  invalidate() {
+    this.complexForm.get('name').setErrors({ duplicated: true });
+  }
 }

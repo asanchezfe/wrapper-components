@@ -1,0 +1,9 @@
+<div class="mvs-input-text">
+  <span *ngIf="isRequired" class="required-dot"></span>
+  <input type="text" [id]="formControlName" [placeholder]="label || ''" (change)="change($event)" [value]="value"
+    (keyup)="change($event)" />
+  <label *ngIf="label" [for]="formControlName">{{ label  }}</label>
+  <div class="error">
+    <ng-content></ng-content>
+  </div>
+</div>
