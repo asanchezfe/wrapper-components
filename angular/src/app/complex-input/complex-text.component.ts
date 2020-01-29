@@ -52,4 +52,6 @@ export class ComplexInputComponent implements ControlValueAccessor {
   registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
+
+  // setDisabledState() {}
 }
